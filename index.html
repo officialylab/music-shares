@@ -121,19 +121,32 @@ alert(e.message);
 }
 
 function renderApp() {
-document.getElementById('app').innerHTML = `
-<div class="container">
-<div class="header">
-<div class="logo">Music Shares</div>
-<button onclick="logout()" style="background:none;border:none;cursor:pointer;font-size:14px;">Logout</button>
-</div>
-<div style="padding:20px;text-align:center;">
-<h2 style="color:#8b5cf6;">Welcome!</h2>
-<p style="color:#666;margin-top:10px;">Your complete Music Shares app is loading...</p>
-<p style="color:#999;margin-top:20px;font-size:14px;">User: ${currentUser.email}</p>
-</div>
-</div>
+document.getElementById('app').innerHTML = ``
+  <div class="container">
+    <div class="header">
+      <div class="logo">Music Shares</div>
+      <button onclick="logout()" style="background:none;border:none;cursor:pointer;font-size:14px;">Logout</button>
+    </div>
+    <div class="nav">
+      <button class="nav-btn ${currentView==='feed'?'active':''}" onclick="switchView('feed')">📸 Feed</button>
+      <button class="nav-btn ${currentView==='upload'?'active':''}" onclick="switchView('upload')">➕ Upload</button>
+      <button class="nav-btn ${currentView==='profile'?'active':''}" onclick="switchView('profile')">👤 Profile</button>
+      <button class="nav-btn ${currentView==='notifications'?'active':''}" onclick="switchView('notifications')">🔔 Notifications</button>
+    </div>
+    <div id="view-content">
+      ${currentView === 'feed' ? '<div class="empty-state"><div class="empty-icon">📸</div><div class="empty-text">No posts yet</div><div class="empty-hint">Be the first to share!</div></div>' : ''}
+      ${currentView === 'upload' ? '<div class="empty-state"><div class="empty-icon">➕</div><div class="empty-text">Upload view</div><div class="empty-hint">Coming soon...</div></div>' : ''}
+      ${currentView === 'profile' ? '<div class="empty-state"><div class="empty-icon">👤</div><div class="empty-text">Your Profile</div><div class="empty-hint">User: '+currentUser.email+'</div></div>' : ''}
+      ${currentView === 'notifications' ? '<div class="empty-state"><div class="empty-icon">🔔</div><div class="empty-text">No notifications</div><div class="empty-hint">You\'re all caught up!</div></div>' : ''}
+    </div>
+  </div>
+  `;
 `;
+}
+
+  function switchView(view) {
+  currentView = view;
+  renderApp();
 }
 </script>
 </body>
