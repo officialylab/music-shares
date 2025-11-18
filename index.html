@@ -94,6 +94,7 @@ onAuthStateChanged(auth, (user) => {
 currentUser = user;
 if (user) {
 renderApp();
+      loadPosts();
 } else {
 renderAuthPage();
 }
