@@ -44,6 +44,19 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .empty-icon { font-size: 64px; margin-bottom: 16px; }
 .empty-text { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
 .empty-hint { font-size: 14px; }
+  .profile-header { padding: 16px; border-bottom: 1px solid #dbdbdb; }
+.profile-info { display: flex; align-items: center; margin-bottom: 20px; }
+.profile-avatar-large { width: 77px; height: 77px; border-radius: 50%; background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 32px; font-weight: 600; }
+.profile-stats { flex: 1; display: flex; justify-content: space-around; padding: 0 20px; }
+.stat { text-align: center; }
+.stat-value { font-weight: 600; font-size: 16px; }
+.stat-label { font-size: 14px; color: #8e8e8e; }
+.profile-bio { margin-top: 12px; }
+.profile-name { font-weight: 600; font-size: 14px; }
+.profile-email { font-size: 14px; color: #8e8e8e; margin-top: 2px; }
+.posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.grid-post { aspect-ratio: 1; background: #efefef; cursor: pointer; overflow: hidden; }
+.grid-post img { width: 100%; height: 100%; object-fit: cover; }
 </style>
 </head>
 <body>
@@ -138,8 +151,7 @@ document.getElementById('app').innerHTML = `
     <div id="view-content">
       ${currentView === 'feed' ? '<div class="empty-state"><div class="empty-icon">📸</div><div class="empty-text">No posts yet</div><div class="empty-hint">Be the first to share!</div></div>' : ''}
       ${currentView === 'upload' ? '<div class="empty-state"><div class="empty-icon">➕</div><div class="empty-text">Upload view</div><div class="empty-hint">Coming soon...</div></div>' : ''}
-      ${currentView === 'profile' ? '<div class="empty-state"><div class="empty-icon">👤</div><div class="empty-text">Your Profile</div><div class="empty-hint">User: '+currentUser.email+'</div></div>' : ''}
-      ${currentView === 'notifications' ? '<div class="empty-state"><div class="empty-icon">🔔</div><div class="empty-text">No notifications</div><div class="empty-hint">You\'re all caught up!</div></div>' : ''}
+            ${currentView === 'profile' ? '<div class="profile-header"><div class="profile-info"><div class="profile-avatar-large">'+currentUser.email.charAt(0).toUpperCase()+'</div><div class="profile-stats"><div class="stat"><div class="stat-value">0</div><div class="stat-label">posts</div></div><div class="stat"><div class="stat-value">0</div><div class="stat-label">followers</div></div><div class="stat"><div class="stat-value">0</div><div class="stat-label">following</div></div></div></div><div class="profile-bio"><div class="profile-name">'+currentUser.email.split("@")[0]+'</div><div class="profile-email">'+currentUser.email+'</div></div></div><div class="posts-grid"><div class="empty-state" style="grid-column:1/4;padding:40px 20px;"><div class="empty-icon">📸</div><div class="empty-text">No Posts Yet</div><div class="empty-hint">Share your first photo!</div></div></div>' : ''}      ${currentView === 'notifications' ? '<div class="empty-state"><div class="empty-icon">🔔</div><div class="empty-text">No notifications</div><div class="empty-hint">You\'re all caught up!</div></div>' : ''}
     </div>
   </div>
   `;
