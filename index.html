@@ -9,9 +9,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #fafafa; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #000; min-height: 100vh; overflow-x: hidden; }.logo { font-size: 24px; font-weight: 600; background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .container { max-width: 100%; margin: 0 auto; background: #000; min-height: 100vh; }.input-group input { width: 100%; padding: 12px; background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }
-.btn-primary { width: 100%; padding: 12px; background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }
-.auth-box { background: white; padding: 40px; border-radius: 12px; width: 100%; max-width: 400px; margin: 100px auto; }
-.auth-logo { text-align: center; font-size: 32px; font-weight: 700; background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 30px; }
+.auth-box { background: #000; padding: 40px; border: 1px solid #262626; border-radius: 3px; width: 100%; max-width: 400px; margin: 100px auto; }.auth-logo { text-align: center; font-size: 32px; font-weight: 700; background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 30px; }
 .hidden { display: none; }
 #app>*:not(.hidden) { display: block; }
 .nav { display: flex; justify-content: space-around; padding: 16px 0; border-top: 1px solid #dbdbdb; background: white; position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); }.nav-btn { background: none; border: none; flex: 1; padding: 12px 8px; background: none; border: none; font-size: 14px; font-weight: 600; cursor: pointer; color: #8e8e8e; transition: all 0.2s; border-bottom: 3px solid transparent; }
@@ -33,21 +31,15 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .add-comment { padding: 12px 16px; border-top: 1px solid #efefef; display: flex; gap: 8px; }
 .comment-input { flex: 1; border: none; outline: none; font-size: 14px; }
 .comment-btn { background: none; border: none; color: #0095f6; font-weight: 600; cursor: pointer; font-size: 14px; }
-.empty-state { text-align: center; padding: 60px 20px; color: #8e8e8e; }
-.empty-icon { font-size: 64px; margin-bottom: 16px; }
-.empty-text { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
-.empty-hint { font-size: 14px; }
+.empty-state { text-align: center; padding: 60px 20px; color: #a8a8a8; }.empty-icon { font-size: 64px; margin-bottom: 16px; }
+.empty-text { font-size: 18px; font-weight: 600; margin-bottom: 8px; color: white; }.empty-hint { font-size: 14px; }
   .profile-header { padding: 16px; border-bottom: 1px solid #dbdbdb; }
 .profile-info { display: flex; align-items: center; margin-bottom: 20px; }
 .profile-avatar-large { width: 77px; height: 77px; border-radius: 50%; background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 32px; font-weight: 600; }
 .profile-stats { flex: 1; display: flex; justify-content: space-around; padding: 0 20px; }
 .stat { text-align: center; }
-.stat-value { font-weight: 600; font-size: 16px; }
-.stat-label { font-size: 14px; color: #8e8e8e; }
-.profile-bio { margin-top: 12px; }
-.profile-name { font-weight: 600; font-size: 14px; }
-.profile-email { font-size: 14px; color: #8e8e8e; margin-top: 2px; }
-.posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.stat-label { font-size: 14px; color: #a8a8a8; }.profile-bio { margin-top: 12px; }
+.profile-name { font-weight: 600; font-size: 14px; color: white; }.profile-email { font-size: 14px; color: #a8a8a8; margin-top: 2px; }.posts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .grid-post { aspect-ratio: 1; background: #efefef; cursor: pointer; overflow: hidden; }
 .grid-post img { width: 100%; height: 100%; object-fit: cover; }
 </style>
