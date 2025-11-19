@@ -129,10 +129,10 @@ document.getElementById('app').innerHTML = `
       <button onclick="logout()" style="background:none;border:none;cursor:pointer;font-size:14px;">Logout</button>
     </div>
     <div class="nav">
-      <button class="nav-btn ${currentView==='feed'?'active':''}" onclick="switchView('feed')">📸 Feed</button>
-      <button class="nav-btn ${currentView==='upload'?'active':''}" onclick="switchView('upload')">➕ Upload</button>
-      <button class="nav-btn ${currentView==='profile'?'active':''}" onclick="switchView('profile')">👤 Profile</button>
-      <button class="nav-btn ${currentView==='notifications'?'active':''}" onclick="switchView('notifications')">🔔 Notifications</button>
+      <button class="nav-btn ${currentView==='feed'?'active':''}" onclick="switchView('feed')">Feed</button>
+      <button class="nav-btn ${currentView==='upload'?'active':''}" onclick="switchView('upload')">Upload</button>
+      <button class="nav-btn ${currentView==='profile'?'active':''}" onclick="switchView('profile')">Profile</button>
+      <button class="nav-btn ${currentView==='notifications'?'active':''}" onclick="switchView('notifications')">Notifications</button>
     </div>
     <div id="view-content">
       ${currentView === 'feed' ? '<div class="empty-state"><div class="empty-icon">📸</div><div class="empty-text">No posts yet</div><div class="empty-hint">Be the first to share!</div></div>' : ''}
