@@ -69,13 +69,14 @@ const db = getFirestore();
 const storage = getStorage();
 
 let currentUser = null;
+  let currentView = 'feed';
+let posts = [];
+let selectedFile = null;
+
 
 function renderAuth() {
 return `
 <div class="auth-box">
-let currentView = 'feed';
-let posts = [];
-let selectedFile = null;
 <div class="auth-logo">Music Shares</div>
 <div class="input-group">
 <input type="email" id="email" placeholder="Email" style="background:white;color:#000;border:1px solid #dbdbdb;margin-bottom:12px;">
